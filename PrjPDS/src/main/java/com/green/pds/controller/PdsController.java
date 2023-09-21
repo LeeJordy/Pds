@@ -71,6 +71,7 @@ public class PdsController {
 	public  ModelAndView   writeForm(
 		@RequestParam  HashMap<String, Object>  map) {
 				
+		
 		// 메뉴 목록
 		List<MenuVo>  menuList  =  menuService.getMenuList(); 
 		
@@ -127,6 +128,9 @@ public class PdsController {
 		
 		// 메뉴 목록
 		List<MenuVo>   menuList  =  menuService.getMenuList();
+		
+		// 조회수 증가 (+1)
+		pdsService.setReadcountUpdate(map);
 		
 		// 조회할 정보 : Board -> pdsVo
 		 PdsVo         pdsVo     =  pdsService.getView( map );

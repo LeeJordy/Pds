@@ -108,6 +108,12 @@ public class PdsDaoImpl implements PdsDao {
 				
 	}
 
+	@Override
+	public void setReadcountUpdate(HashMap<String, Object> map) {
+		
+		sqlSession.update("Pds.ReadcountUpdate",map);
+	}
+
 }
 
 
